@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Painel da Votação</title>
+<link rel="icon" type="image/webp" href="assets/icon.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="pagina-admin">
+
+    <section
+      id="loginAdmin"
+      class="card login-admin"
+    >
+
+      <h1>Painel da votação</h1>
+
+      <p>
+        Acesso exclusivo da administração.
+      </p>
+
+      <div class="campo">
+
+        <label for="senhaAdmin">
+          Senha
+        </label>
+
+        <input
+          type="password"
+          id="senhaAdmin"
+          placeholder="Digite a senha"
+        >
+
+      </div>
+
+      <button
+        id="entrarAdmin"
+        class="confirmar"
+      >
+        Entrar
+      </button>
+
+      <div
+        id="mensagemLogin"
+        class="mensagem"
+      ></div>
+
+    </section>
+
+    <section
+      id="painelAdmin"
+      class="painel-admin escondido"
+    >
+
+      <div class="topo-admin">
+
+        <div>
+          <span class="etiqueta">
+            ADMINISTRAÇÃO
+          </span>
+
+          <h1>
+            Resultado da votação
+          </h1>
+
+          <p>
+            Mercadinho Eco One Araucária
+          </p>
+        </div>
+
+        <button
+          id="atualizarResultados"
+          class="botao-secundario"
+        >
+          Atualizar
+        </button>
+
+      </div>
+
+      <div class="cards-resultados">
+
+        <article class="resultado-card">
+
+          <span>Total</span>
+
+          <strong id="totalVotos">
+            0
+          </strong>
+
+          <small>votos registrados</small>
+
+        </article>
+
+        <article class="resultado-card resultado-sim">
+
+          <span>SIM</span>
+
+          <strong id="totalSim">
+            0
+          </strong>
+
+          <small id="percentualSim">
+            0%
+          </small>
+
+        </article>
+
+        <article class="resultado-card resultado-nao">
+
+          <span>NÃO</span>
+
+          <strong id="totalNao">
+            0
+          </strong>
+
+          <small id="percentualNao">
+            0%
+          </small>
+
+        </article>
+
+      </div>
+
+      <section class="lista-votos">
+
+        <div class="titulo-lista">
+
+          <h2>
+            Moradores que participaram
+          </h2>
+
+          <input
+            type="search"
+            id="buscarApartamento"
+            placeholder="Buscar apartamento"
+          >
+
+        </div>
+
+        <div class="tabela-container">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>Morador</th>
+
+                <th>Apartamento</th>
+
+                <th>Voto</th>
+
+                <th>Data</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="listaVotos"></tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+<footer class="rodape-desenvolvedora">
+
+  <div class="rodape-conteudo">
+
+    <div class="rodape-autoria">
+
+      <span class="rodape-label">
+        Desenvolvido por
+      </span>
+
+      <strong>
+        Wadssa Wacemberg
+      </strong>
+
+    </div>
+
+
+    <div class="rodape-links">
+
+      <a
+        href="mailto:wadssa@gmail.com"
+        class="rodape-link"
+        aria-label="Enviar e-mail para Wadssa Wacemberg"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
+          />
+        </svg>
+
+        <span>
+          E-mail
+        </span>
+
+      </a>
+
+
+      <a
+        href="https://www.linkedin.com/in/wadssa-wacemberg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rodape-link"
+        aria-label="LinkedIn de Wadssa Wacemberg"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6.5 8.5H3.5V21h3V8.5Zm.2-3.7A1.8 1.8 0 1 0 3.1 4.8a1.8 1.8 0 0 0 3.6 0ZM21 13.9c0-3.7-2-5.5-4.7-5.5-2.2 0-3.1 1.2-3.7 2V8.5h-3V21h3v-6.2c0-1.6.3-3.2 2.3-3.2 2 0 2 1.8 2 3.3V21h3.1v-7.1Z"
+          />
+        </svg>
+
+        <span>
+          LinkedIn
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="rodape-direitos">
+
+      <span>
+        © 2026 Eco One Araucária
+      </span>
+
+      <span class="separador">
+        •
+      </span>
+
+      <span>
+        Todos os direitos reservados
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+  <script src="admin.js"></script>
+
+</body>
+
+</html>

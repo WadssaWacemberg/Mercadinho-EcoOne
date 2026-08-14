@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Votação dos moradores do Eco One Araucária sobre a implantação do mercadinho no condomínio."
+  >
+
+  <title>
+    Votação Mercadinho | Eco One Araucária
+  </title>
+
+
+
+  <link
+    rel="icon"
+    type="image/webp"
+    href="assets/icon.webp"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <section
+    class="hero-video"
+    aria-label="Apresentação do projeto do mercadinho"
+  >
+
+
+    <video
+      id="videoMercadinho"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="assets/mercadinho-entrada.jpg"
+    >
+
+      <source
+        src="assets/mercadinho-video-h264.mp4"
+        type="video/mp4"
+      >
+
+      Seu navegador não suporta vídeo.
+
+    </video>
+
+
+    <div class="hero-video-overlay"></div>
+
+
+    <div class="hero-video-conteudo">
+
+
+      <span class="tag-topo">
+        ECO ONE ARAUCÁRIA
+      </span>
+
+
+      <h1>
+        Mercadinho no condomínio
+      </h1>
+
+
+      <p>
+        Conheça a proposta e participe da votação
+        dos moradores.
+      </p>
+
+
+      <div class="acoes-hero">
+
+
+        <a
+          href="#paginaVotacao"
+          id="irParaVotacao"
+          class="botao-ir-votar"
+        >
+          Ir para votação ↓
+        </a>
+
+
+        <button
+          type="button"
+          id="botaoSom"
+          class="botao-som"
+          aria-label="Ativar áudio do vídeo"
+        >
+          🔊 Ativar som
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+ 
+  <main
+  id="paginaVotacao"
+  class="pagina-votacao"
+>
+
+
+    <section class="card card-votacao">
+
+
+      <div class="cabecalho-votacao">
+
+
+        <span class="etiqueta">
+          VOTAÇÃO DOS MORADORES
+        </span>
+
+
+        <h2>
+          Você é a favor da implantação
+          do mercadinho?
+        </h2>
+
+
+        <p>
+          Vote de forma simples e rápida.
+          Será aceito apenas um voto por apartamento.
+        </p>
+
+
+      </div>
+
+
+      <form
+        id="formVoto"
+        autocomplete="on"
+      >
+
+
+     
+
+        <div class="campo">
+
+          <label for="nome">
+            Nome e sobrenome do morador
+          </label>
+
+
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            maxlength="150"
+            placeholder="Ex.: Maria da Silva"
+            autocomplete="name"
+            required
+          >
+
+        </div>
+
+
+       
+
+        <div class="campo">
+
+          <label for="apartamento">
+            Apartamento + bloco
+          </label>
+
+
+          <input
+            type="text"
+            id="apartamento"
+            name="apartamento"
+            maxlength="10"
+            placeholder="Ex.: 23A ou 23B"
+            autocomplete="off"
+            autocapitalize="characters"
+            required
+          >
+
+
+          <small class="ajuda-campo">
+            Informe o número do apartamento seguido
+            do bloco A ou B.
+          </small>
+
+        </div>
+
+
+     
+
+        <div class="campo">
+
+          <label>
+            Escolha seu voto
+          </label>
+
+
+          <div class="opcoes-voto">
+
+
+          
+
+            <button
+              type="button"
+              class="botao-voto sim"
+              data-voto="SIM"
+              aria-label="Votar sim, sou a favor"
+            >
+
+              <span aria-hidden="true">
+                👍
+              </span>
+
+              <strong>
+                SIM
+              </strong>
+
+              <small>
+                Sou a favor
+              </small>
+
+            </button>
+
+
+            
+            <button
+              type="button"
+              class="botao-voto nao"
+              data-voto="NAO"
+              aria-label="Votar não, sou contra"
+            >
+
+              <span aria-hidden="true">
+                👎
+              </span>
+
+              <strong>
+                NÃO
+              </strong>
+
+              <small>
+                Sou contra
+              </small>
+
+            </button>
+
+
+          </div>
+
+        </div>
+
+
+        <input
+          type="hidden"
+          id="voto"
+          name="voto"
+        >
+
+
+       
+        <div class="aviso-validacao">
+
+
+          <div
+            class="icone-aviso"
+            aria-hidden="true"
+          >
+            🛡️
+          </div>
+
+
+          <div>
+
+            <strong>
+              Aviso de validação
+            </strong>
+
+
+            <p>
+              Serão considerados válidos apenas os votos
+              com nome verdadeiro do morador responsável
+              e apartamento correto.
+            </p>
+
+
+            <p>
+              Os dados poderão ser conferidos junto à
+              síndica, diretoria e portaria para fins de
+              auditoria da votação.
+            </p>
+
+
+            <p>
+              Votos com informações falsas ou inconsistentes
+              poderão ser desconsiderados.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+  
+
+        <button
+          type="submit"
+          id="confirmarVoto"
+          class="confirmar"
+        >
+          Confirmar meu voto
+        </button>
+        <div
+          id="mensagem"
+          class="mensagem"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+
+      </form>
+
+
+      <p class="privacidade">
+
+        Um voto por apartamento.
+
+        Nome, apartamento, voto e data serão utilizados
+        exclusivamente para validação e auditoria desta votação.
+
+      </p>
+
+
+    </section>
+
+  </main>
+  <section
+    class="secao-galeria"
+    aria-labelledby="tituloGaleria"
+  >
+
+
+    <div class="titulo-secao">
+
+
+      <span class="etiqueta">
+        PROJETO
+      </span>
+
+
+      <h2 id="tituloGaleria">
+        Conheça o mercadinho
+      </h2>
+
+
+      <p>
+        Imagens ilustrativas do modelo proposto
+        para o condomínio.
+      </p>
+
+
+    </div>
+
+
+    <div class="carrossel">
+
+
+      <div class="carrossel-track">
+
+
+        <div class="card-img">
+
+          <img
+            src="assets/mercadinho-entrada.jpg"
+            alt="Entrada do mercadinho de container"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="card-img">
+
+          <img
+            src="assets/mercadinho-lateral.jpg"
+            alt="Vista lateral do mercadinho"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="card-img">
+
+          <img
+            src="assets/mercadinho-interno.jpg"
+            alt="Interior do mercadinho"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="card-img">
+
+          <img
+            src="assets/mercadinho-caixa.jpg"
+            alt="Área interna e caixa do mercadinho"
+            loading="lazy"
+          >
+
+        </div>
+
+
+
+        <div
+          class="card-img"
+          aria-hidden="true"
+        >
+
+          <img
+            src="assets/mercadinho-entrada.jpg"
+            alt=""
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div
+          class="card-img"
+          aria-hidden="true"
+        >
+
+          <img
+            src="assets/mercadinho-lateral.jpg"
+            alt=""
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div
+          class="card-img"
+          aria-hidden="true"
+        >
+
+          <img
+            src="assets/mercadinho-interno.jpg"
+            alt=""
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div
+          class="card-img"
+          aria-hidden="true"
+        >
+
+          <img
+            src="assets/mercadinho-caixa.jpg"
+            alt=""
+            loading="lazy"
+          >
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <main
+  id="paginaObrigado"
+  class="pagina-obrigado escondido"
+>
+
+
+    <section class="card obrigado-card">
+
+
+      <div
+        class="icone-sucesso"
+        aria-hidden="true"
+      >
+        ✓
+      </div>
+
+
+      <span class="etiqueta">
+        VOTO REGISTRADO
+      </span>
+
+
+      <h1>
+        Obrigado pelo seu voto!
+      </h1>
+
+
+      <p class="texto-obrigado">
+
+        Sua participação foi registrada com sucesso
+        na votação do Mercadinho do Eco One Araucária.
+
+      </p>
+
+
+      <div class="comprovante-voto">
+
+
+        <span>
+          Apartamento
+        </span>
+
+
+        <strong id="apartamentoConfirmado">
+          -
+        </strong>
+
+
+        <small>
+          Participação registrada
+        </small>
+
+
+      </div>
+
+
+      <div class="aviso-final">
+
+
+        <span aria-hidden="true">
+          🛡️
+        </span>
+
+
+        <p>
+          Este apartamento já participou da votação
+          e não poderá registrar um segundo voto.
+        </p>
+
+
+      </div>
+
+
+      <p class="auditoria-final">
+
+        Os votos poderão ser conferidos posteriormente
+        junto à administração do condomínio para validação
+        e auditoria.
+
+      </p>
+
+
+    </section>
+
+  </main>
+
+
+  
+
+  <footer class="rodape-desenvolvedora">
+
+  <div class="rodape-conteudo">
+
+    <div class="rodape-autoria">
+
+      <span class="rodape-label">
+        Desenvolvido por
+      </span>
+
+      <strong>
+        Wadssa Wacemberg
+      </strong>
+
+    </div>
+
+
+    <div class="rodape-links">
+
+      <a
+        href="mailto:wadssa@gmail.com"
+        class="rodape-link"
+        aria-label="Enviar e-mail para Wadssa Wacemberg"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
+          />
+        </svg>
+
+        <span>
+          E-mail
+        </span>
+
+      </a>
+
+
+      <a
+        href="https://www.linkedin.com/in/wadssa-wacemberg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rodape-link"
+        aria-label="LinkedIn de Wadssa Wacemberg"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M6.5 8.5H3.5V21h3V8.5Zm.2-3.7A1.8 1.8 0 1 0 3.1 4.8a1.8 1.8 0 0 0 3.6 0ZM21 13.9c0-3.7-2-5.5-4.7-5.5-2.2 0-3.1 1.2-3.7 2V8.5h-3V21h3v-6.2c0-1.6.3-3.2 2.3-3.2 2 0 2 1.8 2 3.3V21h3.1v-7.1Z"
+          />
+        </svg>
+
+        <span>
+          LinkedIn
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="rodape-direitos">
+
+      <span>
+        © 2026 Eco One Araucária
+      </span>
+
+      <span class="separador">
+        •
+      </span>
+
+      <span>
+        Todos os direitos reservados
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+  
+
+  <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
